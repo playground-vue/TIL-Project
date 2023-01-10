@@ -1,18 +1,13 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
-
+require('@rushstack/eslint-patch/modern-module-resolution');
 module.exports = {
   root: true,
-  extends: [
-    'plugin:vue/vue3-recommended',
-    '@vue/typescript/recommended',
-    '@vue/eslint-config-airbnb'
-  ],
+  extends: ['plugin:vue/vue3-recommended', '@vue/typescript/recommended', '@vue/eslint-config-airbnb', 'plugin:storybook/recommended'],
   parser: 'vue-eslint-parser',
   parserOptions: {
     "parser": "@typescript-eslint/parser",
     ecmaVersion: 'latest',
-    "sourceType": "module",
+    "sourceType": "module"
   },
   "settings": {
     "import/resolver": {
@@ -30,14 +25,14 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'no-param-reassign': ['error', {
-      props: false,
+      props: false
     }],
     'import/extensions': ['error', 'ignorePackages', {
       js: 'never',
       mjs: 'never',
       jsx: 'never',
       ts: 'never',
-      tsx: 'never',
-    }],
+      tsx: 'never'
+    }]
   }
-}
+};
