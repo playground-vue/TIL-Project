@@ -1,5 +1,15 @@
 {
-  "files": [],
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["env.d.ts", "src/**/*.ts", "src/**/*.vue"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "allowJs": true, // ts 프로젝트에서 js 읽음 여부, default: false,
+    "noImplicitAny": false,
+    "resolveJsonModule": true, // json 모듈 import, type valid 여부
+  },
   "references": [
     {
       "path": "./tsconfig.config.json"
