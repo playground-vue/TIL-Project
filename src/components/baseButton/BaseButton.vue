@@ -13,8 +13,8 @@ import { useButton } from '@/components/baseButton/uses';
 import type { ButtonNativeType, ButtonType } from '@/components/baseButton/uses';
 
 interface Props {
-  nativeType: ButtonNativeType;
-  type: ButtonType;
+  nativeType?: ButtonNativeType;
+  type?: ButtonType;
 }
 interface Emit {
   (e: 'click'): void;
