@@ -33,6 +33,7 @@ module.exports = {
       jsx: 'never',
       ts: 'never',
       tsx: 'never'
-    }]
+    }],
+    'vuejs-accessibility/click-events-have-key-events': 'off',
   }
 };
