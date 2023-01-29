@@ -4,9 +4,8 @@
     v-bind="props"
     @click="onClick"
   >
-    <div class="button-icon__overlay">
-      <slot />
-    </div>
+    <div class="button-icon__overlay" />
+    <slot />
   </BaseButton>
 </template>
 
@@ -36,6 +35,8 @@ const {
 
 <style lang="scss">
 .button-icon {
+  display: flex;
+  position: relative;
   width: 38px;
   padding: 0;
   line-height: 38px;
@@ -43,11 +44,13 @@ const {
   background-color: transparent;
 
   .button-icon__overlay {
+    position: absolute;
     height: 100%;
     width: 100%;
     border-radius: 50%;
     &:hover {
       background-color: rgb(52, 56, 78);
+      opacity: 0.3;
     }
   }
 }

@@ -11,6 +11,7 @@
 
 <style lang="scss">
 .base-card {
+  padding: 0 15px;
   background-color: rgb(47, 51, 73);
   color: rgba(228, 230, 244, 0.68);
   border-radius: 6px;
