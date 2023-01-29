@@ -1,18 +1,40 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import AnalyticsView from '@/views/AnalyticsView.vue';
+import LoginView from '@/views/LoginView.vue';
+import DashboardViewport from '@/views/DashboardViewport.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: AnalyticsView,
+      name: 'main',
+      component: LoginView,
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('@/views/AboutView.vue'),
+      path: '/login',
+      name: 'login',
+      component: LoginView,
+    },
+    {
+      path: '/dashboard',
+      component: DashboardViewport,
+      children: [
+        {
+          path: '/analyticsView',
+          name: 'analyticsView',
+          component: () => import('@/views/AnalyticsView.vue'),
+        },
+        {
+          path: '/eCommerceView',
+          name: 'eCommerceView',
+          component: () => import('@/views/ECommerceView.vue'),
+        },
+        {
+          path: '/crmView',
+          name: 'crmView',
+          component: () => import('@/views/CrmView.vue'),
+        },
+      ],
     },
   ],
 });
