@@ -1,3 +1,6 @@
+let uid = 0;
+const getUid = () => uid++;
+
 const numToPx = (num: number) => {
   if (num !== 0) {
     return `${num}px`;
@@ -6,5 +9,6 @@ const numToPx = (num: number) => {
 };
 
 export {
+  getUid,
   numToPx,
 };
