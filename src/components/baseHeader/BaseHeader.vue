@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import BaseCard from '@/components/baseCard/BaseCard.vue';
 import ButtonIcon from '@/components/buttonIcon/ButtonIcon.vue';
+import IconSearch from '@/assets/icon-search.svg';
+import IconLanguage from '@/assets/icon-language.svg';
+import IconTheme from '@/assets/icon-theme.svg';
+import IconFrame from '@/assets/icon-frame.svg';
+import IconAlarm from '@/assets/icon-alarm.svg';
 </script>
 
 <template>
@@ -8,25 +13,22 @@ import ButtonIcon from '@/components/buttonIcon/ButtonIcon.vue';
     <BaseCard>
       <div class="layout-navbar__list">
         <ButtonIcon>
-          =
-        </ButtonIcon>
-        <ButtonIcon>
-          Q
+          <IconSearch />
         </ButtonIcon>
         <div class="flex-grow">
           Search
         </div>
         <ButtonIcon>
-          영/한
+          <IconLanguage />
         </ButtonIcon>
         <ButtonIcon>
-          해
+          <IconTheme />
         </ButtonIcon>
         <ButtonIcon>
-          네모
+          <IconFrame />
         </ButtonIcon>
         <ButtonIcon>
-          알람
+          <IconAlarm />
         </ButtonIcon>
         <ButtonIcon>
           INFO
@@ -39,10 +41,14 @@ import ButtonIcon from '@/components/buttonIcon/ButtonIcon.vue';
 <style lang="scss">
 .layout-navbar {
   position: sticky;
-  color: rgba(228, 230, 244, 0.87);
-  padding: 15px 20px;
   top: 0;
+  width: 100%;
+  padding: 15px 20px;
+  color: rgba(228, 230, 244, 0.87);
   opacity: 0.7;
+  max-width: 1440px;
+  align-self: center;
+  box-sizing: border-box;
   backdrop-filter: blur(30px);
 
   &__list {
