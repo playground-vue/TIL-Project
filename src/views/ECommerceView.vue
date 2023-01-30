@@ -2,11 +2,10 @@
 </script>
 
 <template>
-  <RouterView />
+  <div>
+    eCommerce View 기본 화면
+  </div>
 </template>
 
 <style lang="scss">
-#app {
-  color: rgba(228, 230, 244, 0.68);
-}
 </style>

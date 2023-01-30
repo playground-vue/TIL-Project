@@ -15,22 +15,32 @@ const navPaddingPx = computed(() => numToPx(props.navPadding));
 
 <template>
   <aside>
-    <aside class="base-nav--vertical">
+    <nav class="base-nav--vertical">
       <div class="nav-header">
-        NAV HEADER
+        <RouterLink to="/login">
+          NAV HEADER
+        </RouterLink>
       </div>
       <ul class="nav-items">
-        <li class="nav-link">
-          Dashboard
+        <li
+          class="nav-link"
+        >
+          <RouterLink to="/analyticsView">
+            Analytics
+          </RouterLink>
         </li>
         <li class="nav-link">
-          eCommerce
+          <RouterLink to="/eCommerceView">
+            eCommerce
+          </RouterLink>
         </li>
         <li class="nav-link">
-          CRM
+          <RouterLink to="/crmView">
+            CRM
+          </RouterLink>
         </li>
       </ul>
-    </aside>
+    </nav>
   </aside>
 </template>
 

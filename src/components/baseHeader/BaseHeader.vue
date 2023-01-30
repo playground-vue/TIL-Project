@@ -41,7 +41,6 @@ import IconAlarm from '@/assets/icon-alarm.svg';
 <style lang="scss">
 .layout-navbar {
   position: sticky;
-  top: 0;
   width: 100%;
   padding: 15px 20px;
   color: rgba(228, 230, 244, 0.87);
