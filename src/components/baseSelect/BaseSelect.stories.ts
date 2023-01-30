@@ -15,7 +15,7 @@ const Template = (args: Props) => ({
   setup() {
     const actionsData = {
       onUpdateModelValue: action('update:modelValue'),
-      onChangeItem: action('change-item'),
+      onChange: action('on-change'),
     };
 
     return {
@@ -23,7 +23,7 @@ const Template = (args: Props) => ({
       ...actionsData,
     };
   },
-  template: '<base-select v-bind="args" @changeItem="onChangeItem" @update:modelValue="onUpdateModelValue"/>',
+  template: '<base-select v-bind="args" @onChange="onChange" @update:modelValue="onUpdateModelValue"/>',
 });
 
 export const DefaultSelect: any = Template.bind({});

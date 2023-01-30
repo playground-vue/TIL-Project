@@ -13,7 +13,7 @@ interface Props {
 
 interface Emit {
   (e:'update:modelValue', value: SelectItem): void,
-  (e:'change-item', value: SelectItem): void,
+  (e:'on-change', value: SelectItem): void,
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -33,7 +33,7 @@ const toggleClick = (value: Event | boolean) => {
 
 const changeItem = (newItem: SelectItem) => {
   emit('update:modelValue', newItem);
-  emit('change-item', newItem);
+  emit('on-change', newItem);
   toggleClick(false);
 };
 
