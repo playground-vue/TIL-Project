@@ -1,7 +1,7 @@
 export interface Props {
   nativeType: string;
   modelValue: string | number;
-  label: string;
+  label?: string;
   autocomplete?: string;
   disabled?: boolean;
   placeholder?: string;
