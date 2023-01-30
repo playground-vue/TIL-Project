@@ -14,7 +14,8 @@ const Template = (args: Props) => ({
   },
   setup() {
     const actionsData = {
-      onChangeItem: action('changeItem'),
+      onUpdateModelValue: action('update:modelValue'),
+      onChange: action('on-change'),
     };
 
     return {
@@ -22,11 +23,11 @@ const Template = (args: Props) => ({
       ...actionsData,
     };
   },
-  template: '<base-select :select-item="selectItem" v-bind="args" @changeItem="onChangeItem"/>',
+  template: '<base-select v-bind="args" @onChange="onChange" @update:modelValue="onUpdateModelValue"/>',
 });
 
 export const DefaultSelect: any = Template.bind({});
-const selectItem: SelectItem = { name: 'Downloaded', value: 'downloaded' };
+const modelValue: SelectItem = { name: 'Downloaded', value: 'downloaded' };
 const placeholder = 'Select';
 const items: SelectItem[] = [
   { name: 'Downloaded', value: 'downloaded' },
@@ -36,7 +37,7 @@ const items: SelectItem[] = [
   { name: 'Past Due', value: 'pastDue' },
 ];
 DefaultSelect.args = {
-  selectItem,
+  modelValue,
   placeholder,
   items,
 };
