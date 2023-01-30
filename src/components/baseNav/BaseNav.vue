@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { numToPx } from '@/common/utils';
 import { computed } from 'vue';
+import BaseNavItem from '@/components/baseNavItem/BaseNavItem.vue';
+import IconChart from '@/assets/icon-chart.svg';
+import IconPage from '@/assets/icon-page.svg';
+import IconComp from '@/assets/icon-component.svg';
 
 interface Props {
   navPadding: number;
@@ -22,23 +26,27 @@ const navPaddingPx = computed(() => numToPx(props.navPadding));
         </RouterLink>
       </div>
       <ul class="nav-items">
-        <li
-          class="nav-link"
-        >
-          <RouterLink to="/analyticsView">
-            Analytics
-          </RouterLink>
-        </li>
-        <li class="nav-link">
-          <RouterLink to="/eCommerceView">
-            eCommerce
-          </RouterLink>
-        </li>
-        <li class="nav-link">
-          <RouterLink to="/crmView">
-            CRM
-          </RouterLink>
-        </li>
+        <RouterLink to="/analyticsView">
+          <BaseNavItem
+            text="Analytics"
+          >
+            <IconChart />
+          </BaseNavItem>
+        </RouterLink>
+        <RouterLink to="/eCommerceView">
+          <BaseNavItem
+            text="eCommerce"
+          >
+            <IconPage />
+          </BaseNavItem>
+        </RouterLink>
+        <RouterLink to="/crmView">
+          <BaseNavItem
+            text="CRM"
+          >
+            <IconComp />
+          </BaseNavItem>
+        </RouterLink>
       </ul>
     </nav>
   </aside>
@@ -59,7 +67,9 @@ const navPaddingPx = computed(() => numToPx(props.navPadding));
   overflow: hidden;
   min-block-size: 64px;
 }
-.nav-link {
-  height: 44px;
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 </style>
