@@ -6,17 +6,18 @@ import BaseDropdown from '@/components/baseDropdown/BaseDropdown.vue';
 import BaseInput from '@/components/baseInput/BaseInput.vue';
 
 interface Props {
-  selectItem: SelectItem;
+  modelValue: SelectItem;
   items: SelectItem[];
   placeholder: string;
 }
 
 interface Emit {
-  (e:'changeItem', value: SelectItem): void,
+  (e:'update:modelValue', value: SelectItem): void,
+  (e:'on-change', value: SelectItem): void,
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  selectItem: () => ({ name: '', value: '' }),
+  modelValue: () => ({ name: '', value: '' }),
   items: () => [],
   placeholder: 'Select',
 });
@@ -31,7 +32,8 @@ const toggleClick = (value: Event | boolean) => {
 };
 
 const changeItem = (newItem: SelectItem) => {
-  emit('changeItem', newItem);
+  emit('update:modelValue', newItem);
+  emit('on-change', newItem);
   toggleClick(false);
 };
 
@@ -41,8 +43,7 @@ onClickOutside(target, () => toggleClick(false));
 <template>
   <div ref="target" class="base-select-wrapper">
     <div class="base-select" :class="isClick && 'base-select--clicked'" @click="toggleClick">
-      <label for="select-input" />
-      <base-input :model-value="props.selectItem.name" :placeholder="props.placeholder" label="" class="base-select__input" />
+      <base-input :model-value="props.modelValue.name" :placeholder="props.placeholder" label="" class="base-select__input" />
       <div class="base-select__icon">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon" :class="isClick && 'icon--clicked'">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -96,6 +97,11 @@ onClickOutside(target, () => toggleClick(false));
     letter-spacing: .009375em;
     font-size: 16px;
     color: rgb(205,208,222);
+
+    .base-input__input {
+      height: 100%;
+      border: none;
+    }
 
     &::placeholder {
       color: #E4E6F4AD;
