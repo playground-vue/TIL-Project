@@ -28,10 +28,19 @@ const navPaddingPx = computed(() => numToPx(navPadding.value));
 .dashboard-viewport {
   background-color: rgb(37, 41, 60);
   block-size: 100%;
-}
-.layout-content {
-  display: flex;
-  flex-direction: column;
-  padding: 0 0 0 v-bind('navPaddingPx');
+
+  .layout-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 v-bind('navPaddingPx');
+
+    & > header, main {
+      max-width: 1440px;
+      align-self: center;
+      width: 100%;
+      padding: 15px 20px;
+      box-sizing: border-box;
+    }
+  }
 }
 </style>
