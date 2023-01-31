@@ -21,9 +21,7 @@ const navPaddingPx = computed(() => numToPx(props.navPadding));
   <aside>
     <nav class="base-nav--vertical">
       <div class="nav-header">
-        <RouterLink to="/login">
-          NAV HEADER
-        </RouterLink>
+        MENU
       </div>
       <ul class="nav-items">
         <RouterLink to="/analyticsView">
@@ -66,6 +64,10 @@ const navPaddingPx = computed(() => numToPx(props.navPadding));
   display: flex;
   overflow: hidden;
   min-block-size: 64px;
+  padding: 0 10px;
+  margin: 0 10px;
+  align-items: center;
+  font-size: 22px;
 }
 .nav-items {
   display: flex;
