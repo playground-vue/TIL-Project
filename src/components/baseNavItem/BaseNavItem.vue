@@ -3,17 +3,16 @@ interface Props {
   text: string;
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   text: '',
 });
-
 </script>
 
 <template>
   <li class="base-nav-item">
     <slot />
     <span>
-      {{ props.text }}
+      {{ text }}
     </span>
   </li>
 </template>
