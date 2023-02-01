@@ -1,6 +1,6 @@
 interface Props {
   title?: string;
-  subTitle?: string;
+  subtitle?: string;
   style?: string;
 }
 

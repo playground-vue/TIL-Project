@@ -1,10 +1,15 @@
 <script setup lang="ts">
+import BestSellerOfMonthBox from '@/components/containers/bestSellerOfMonthBox/BestSellerOfMonthBox.vue';
+import BestSellerOfMonthBoxSkeleton from '@/components/containers/bestSellerOfMonthBox/BestSellerOfMonthBoxSkeleton.vue';
 </script>
 
 <template>
-  <div>
-    eCommerce View 기본 화면
-  </div>
+  <suspense>
+    <best-seller-of-month-box />
+    <template #fallback>
+      <best-seller-of-month-box-skeleton />
+    </template>
+  </suspense>
 </template>
 
 <style lang="scss">
