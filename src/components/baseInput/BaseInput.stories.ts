@@ -8,7 +8,6 @@ export default {
   argTypes: {
     modelValue: {
       control: { type: 'text' },
-      defaultValue: '인풋 초기 값',
     },
   },
 };
@@ -44,4 +43,5 @@ const Template = (args: Props) => ({
 
 export const DefaultInput: any = Template.bind({});
 DefaultInput.args = {
+  modelValue: '기본 값',
 };

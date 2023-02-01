@@ -27,7 +27,10 @@ const Template = (args: Props) => ({
     };
   },
   template: `
-    <base-dropdown v-bind="args" @click="onClick" />
+    <base-dropdown
+      v-bind="args"
+      @click="onClick"
+    />
   `,
 });
 
@@ -40,4 +43,5 @@ DefaultDropdown.args = {
     { name: 'Partial Payment', value: 'partialPayment' },
     { name: 'Past Due', value: 'pastDue' },
   ],
+  isShow: true,
 };
