@@ -5,5 +5,9 @@ interface Props {
   items: SelectItem[];
   placeholder: string;
 }
+interface Emit {
+  (e:'update:modelValue', value: SelectItem): void,
+  (e:'on-change', value: SelectItem): void,
+}
 
-export type { Props };
+export type { Props, Emit };

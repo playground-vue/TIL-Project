@@ -1,13 +1,6 @@
 <script setup lang="ts">
-import type { SelectItem } from '@/components/baseDropdown/uses';
+import type { SelectItem, Props, Emit } from '@/components/baseDropdown/uses';
 
-interface Props {
-  selectItems: SelectItem[]
-  isShow: boolean;
-}
-interface Emit {
-  (e: 'click', value: SelectItem): void,
-}
 const props = withDefaults(defineProps<Props>(), {
   selectItems: () => [],
   isShow: false,

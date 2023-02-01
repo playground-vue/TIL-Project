@@ -4,17 +4,7 @@ import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 import BaseDropdown from '@/components/baseDropdown/BaseDropdown.vue';
 import BaseInput from '@/components/baseInput/BaseInput.vue';
-
-interface Props {
-  modelValue: SelectItem;
-  items: SelectItem[];
-  placeholder: string;
-}
-
-interface Emit {
-  (e:'update:modelValue', value: SelectItem): void,
-  (e:'on-change', value: SelectItem): void,
-}
+import type { Props, Emit } from './types';
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: () => ({ name: '', value: '' }),
