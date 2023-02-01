@@ -4,12 +4,12 @@ import BestSellerOfMonthBoxSkeleton from '@/components/containers/bestSellerOfMo
 </script>
 
 <template>
-  <suspense>
+  <Suspense>
     <best-seller-of-month-box />
     <template #fallback>
       <best-seller-of-month-box-skeleton />
     </template>
-  </suspense>
+  </Suspense>
 </template>
 
 <style lang="scss">
