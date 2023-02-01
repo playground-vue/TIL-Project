@@ -8,16 +8,16 @@ interface Props {
   style?: string;
 }
 
-const props = defineProps<Props>();
+defineProps<Props>();
 
 </script>
 
 <template>
-  <base-card class="card-text" :style="props.style">
+  <base-card class="card-text" :style="style">
     <base-title>
-      {{ props.title }}
+      {{ title }}
       <template #subTitle>
-        {{ props.subTitle }}
+        {{ subTitle }}
       </template>
     </base-title>
     <slot />
