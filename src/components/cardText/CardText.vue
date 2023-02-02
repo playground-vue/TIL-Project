@@ -10,7 +10,7 @@ defineProps<Props>();
   <base-card class="card-text" :style="style">
     <base-title>
       {{ title }}
-      <template #subTitle>
+      <template #subtitle>
         {{ subtitle }}
       </template>
     </base-title>

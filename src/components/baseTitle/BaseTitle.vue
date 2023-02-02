@@ -4,7 +4,7 @@
       <slot />
     </div>
     <span class="base-title__sub">
-      <slot name="subTitle" />
+      <slot name="subtitle" />
     </span>
   </div>
 </template>
