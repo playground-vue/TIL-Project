@@ -30,7 +30,7 @@ const Template = (args: Props) => ({
     };
   },
   template: `
-    <BaseInput
+    <base-input
       v-bind="args"
       @input="handleInput"
       @focus="handleFocus"
@@ -38,7 +38,7 @@ const Template = (args: Props) => ({
       @change="onChange"
     >
       contents
-    </BaseInput>`,
+    </base-input>`,
 });
 
 export const DefaultInput: any = Template.bind({});

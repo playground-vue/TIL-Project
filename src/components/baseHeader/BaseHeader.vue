@@ -10,31 +10,31 @@ import IconAlarm from '@/assets/icon-alarm.svg';
 
 <template>
   <header class="layout-navbar">
-    <BaseCard>
+    <base-card>
       <div class="layout-navbar__list">
-        <ButtonIcon>
-          <IconSearch />
-        </ButtonIcon>
+        <button-icon>
+          <icon-search />
+        </button-icon>
         <div class="flex-grow">
           Search
         </div>
-        <ButtonIcon>
-          <IconLanguage />
-        </ButtonIcon>
-        <ButtonIcon>
-          <IconTheme />
-        </ButtonIcon>
-        <ButtonIcon>
-          <IconFrame />
-        </ButtonIcon>
-        <ButtonIcon>
-          <IconAlarm />
-        </ButtonIcon>
-        <ButtonIcon>
+        <button-icon>
+          <icon-language />
+        </button-icon>
+        <button-icon>
+          <icon-theme />
+        </button-icon>
+        <button-icon>
+          <icon-frame />
+        </button-icon>
+        <button-icon>
+          <icon-alarm />
+        </button-icon>
+        <button-icon>
           INFO
-        </ButtonIcon>
+        </button-icon>
       </div>
-    </BaseCard>
+    </base-card>
   </header>
 </template>
 

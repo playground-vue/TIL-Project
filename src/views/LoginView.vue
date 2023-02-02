@@ -22,23 +22,23 @@ const submitLogin = () => {
             Login ID & PW
           </legend>
 
-          <BaseInput
+          <base-input
             v-model="loginFormInfo.id"
             class="login-form__input"
             label="ID"
           />
-          <BaseInput
+          <base-input
             v-model="loginFormInfo.pw"
             class="login-form__input"
             label="PW"
           />
         </fieldset>
 
-        <BaseButton
+        <base-button
           native-type="submit"
         >
           Login
-        </BaseButton>
+        </base-button>
       </form>
     </div>
   </div>

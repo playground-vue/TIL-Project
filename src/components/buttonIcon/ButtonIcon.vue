@@ -1,12 +1,12 @@
 <template>
-  <BaseButton
+  <base-button
     class="button-icon"
     v-bind="props"
     @click="onClick"
   >
     <div class="button-icon__overlay" />
     <slot />
-  </BaseButton>
+  </base-button>
 </template>
 
 <script setup lang="ts">

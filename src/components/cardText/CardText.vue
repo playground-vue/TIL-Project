@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import BaseCard from '@/components/baseCard/BaseCard.vue';
 import BaseTitle from '@/components/baseTitle/BaseTitle.vue';
-import type { Props } from './types';
+import type { Props } from './uses';
 
 defineProps<Props>();
-
 </script>
 
 <template>

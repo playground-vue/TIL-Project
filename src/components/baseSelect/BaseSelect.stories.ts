@@ -1,4 +1,4 @@
-import type { Props } from '@/components/baseSelect/types';
+import type { Props } from '@/components/baseSelect/uses';
 import type { SelectItem } from '@/components/baseDropdown/uses';
 import { action } from '@storybook/addon-actions';
 import BaseSelect from './BaseSelect.vue';

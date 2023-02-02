@@ -10,11 +10,11 @@ const Template = () => ({
     BaseNavItem,
   },
   template: `
-    <BaseNavItem
+    <base-nav-item
       text="아이템의 텍스트"
     >
       [ICON]
-    </BaseNavItem>
+    </base-nav-item>
   `,
 });
 
