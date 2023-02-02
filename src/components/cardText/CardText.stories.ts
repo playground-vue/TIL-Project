@@ -31,7 +31,7 @@ const Template = (args: Props) => ({
 export const DefaultCardText: any = Template.bind({});
 const args: Props = {
   title: 'Congratulations John! 🎉',
-  subTitle: 'Best seller of the month',
+  subtitle: 'Best seller of the month',
   style: 'width:300px; height:150px; margin-bottom: 10px;',
 };
 DefaultCardText.args = args;

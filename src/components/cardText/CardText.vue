@@ -4,7 +4,7 @@ import BaseTitle from '@/components/baseTitle/BaseTitle.vue';
 
 interface Props {
   title?: string;
-  subTitle?: string;
+  subtitle?: string;
   style?: string;
 }
 
@@ -17,7 +17,7 @@ defineProps<Props>();
     <base-title>
       {{ title }}
       <template #subTitle>
-        {{ subTitle }}
+        {{ subtitle }}
       </template>
     </base-title>
     <slot />
