@@ -9,16 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import { useButton } from '@/components/baseButton/uses';
-import type { ButtonNativeType, ButtonType } from '@/components/baseButton/uses';
-
-interface Props {
-  nativeType?: ButtonNativeType;
-  type?: ButtonType;
-}
-interface Emit {
-  (e: 'click'): void;
-}
+import { useButton } from './uses';
+import type { Props, Emit } from './uses';
 
 const props = withDefaults(defineProps<Props>(), {
   nativeType: 'button',

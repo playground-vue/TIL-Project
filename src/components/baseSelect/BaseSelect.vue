@@ -1,20 +1,9 @@
 <script setup lang="ts">
-import type { SelectItem } from '@/components/baseDropdown/uses';
-import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 import BaseDropdown from '@/components/baseDropdown/BaseDropdown.vue';
 import BaseInput from '@/components/baseInput/BaseInput.vue';
-
-interface Props {
-  modelValue: SelectItem;
-  items: SelectItem[];
-  placeholder: string;
-}
-
-interface Emit {
-  (e:'update:modelValue', value: SelectItem): void,
-  (e:'on-change', value: SelectItem): void,
-}
+import type { Props, Emit } from './uses';
+import { useBaseSelect } from './uses';
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: () => ({ name: '', value: '' }),
@@ -24,18 +13,12 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<Emit>();
 
-const target = ref(null);
-const isClick = ref(false);
-
-const toggleClick = (value: Event | boolean) => {
-  isClick.value = typeof value === 'boolean' ? value : !isClick.value;
-};
-
-const changeItem = (newItem: SelectItem) => {
-  emit('update:modelValue', newItem);
-  emit('on-change', newItem);
-  toggleClick(false);
-};
+const {
+  target,
+  isClick,
+  toggleClick,
+  changeItem,
+} = useBaseSelect(props, emit);
 
 onClickOutside(target, () => toggleClick(false));
 </script>

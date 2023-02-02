@@ -1,4 +1,4 @@
-import type { Props } from '@/components/cardText/types';
+import type { Props } from '@/components/cardText/uses';
 import BaseButton from '@/components/baseButton/BaseButton.vue';
 import CardText from './CardText.vue';
 import CardTextSkeleton from './CardTextSkeleton.vue';

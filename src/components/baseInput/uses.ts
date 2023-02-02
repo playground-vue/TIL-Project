@@ -1,4 +1,4 @@
-export interface Props {
+interface Props {
   nativeType: string;
   modelValue: string | number;
   label?: string;
@@ -42,4 +42,8 @@ const useInput = (props: Props, emit: Emit) => {
 
 export {
   useInput,
+};
+export type {
+  Props,
+  Emit,
 };

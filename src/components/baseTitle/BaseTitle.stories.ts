@@ -14,7 +14,7 @@ const Template = () => ({
   template: `
     <base-title>
       Generated Leads
-      <template #subTitle>
+      <template #subtitle>
         Monthly Report
       </template>
     </base-title>

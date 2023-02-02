@@ -32,12 +32,12 @@ const Template = (args: Props) => ({
     };
   },
   template: `
-    <ButtonIcon
+    <button-icon
       v-bind="args"
       @click="onClick"
     >
       {{ args.type.toUpperCase() }}
-    </ButtonIcon>`,
+    </button-icon>`,
 });
 
 export const DefaultButtonIcon: any = Template.bind({});

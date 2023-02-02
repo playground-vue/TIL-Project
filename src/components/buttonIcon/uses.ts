@@ -1,9 +1,9 @@
 import { useButton } from '@/components/baseButton/uses';
 
-export type ButtonNativeType = 'button' | 'reset' | 'submit';
-export type ButtonType = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error';
+type ButtonNativeType = 'button' | 'reset' | 'submit';
+type ButtonType = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error';
 
-export interface Props {
+interface Props {
   nativeType: ButtonNativeType;
   type: ButtonType;
 }
@@ -21,4 +21,7 @@ const useButtonIcon = (props: Props, emit: Emit) => {
 
 export {
   useButtonIcon,
+};
+export type {
+  Props, Emit,
 };

@@ -1,26 +1,18 @@
 <template>
-  <BaseButton
+  <base-button
     class="button-icon"
     v-bind="props"
     @click="onClick"
   >
     <div class="button-icon__overlay" />
     <slot />
-  </BaseButton>
+  </base-button>
 </template>
 
 <script setup lang="ts">
-import type { ButtonNativeType, ButtonType } from '@/components/baseButton/uses';
 import BaseButton from '@/components/baseButton/BaseButton.vue';
 import { useButtonIcon } from './uses';
-
-interface Props {
-  nativeType?: ButtonNativeType;
-  type?: ButtonType;
-}
-interface Emit {
-  (e: 'click'): void;
-}
+import type { Props, Emit } from './uses';
 
 const props = withDefaults(defineProps<Props>(), {
   nativeType: 'button',

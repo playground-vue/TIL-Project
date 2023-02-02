@@ -11,15 +11,15 @@ const navPaddingPx = computed(() => numToPx(navPadding.value));
 
 <template>
   <div class="dashboard-viewport">
-    <BaseNav
+    <base-nav
       :nav-padding="navPadding"
     />
     <div class="layout-content">
-      <BaseHeader />
+      <base-header />
       <main>
         <RouterView />
       </main>
-      <BaseFooter />
+      <base-footer />
     </div>
   </div>
 </template>

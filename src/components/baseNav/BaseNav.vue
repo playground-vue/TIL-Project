@@ -25,25 +25,25 @@ const navPaddingPx = computed(() => numToPx(props.navPadding));
       </div>
       <ul class="nav-items">
         <RouterLink to="/analyticsView">
-          <BaseNavItem
+          <base-nav-item
             text="Analytics"
           >
             <IconChart />
-          </BaseNavItem>
+          </base-nav-item>
         </RouterLink>
         <RouterLink to="/eCommerceView">
-          <BaseNavItem
+          <base-nav-item
             text="eCommerce"
           >
             <IconPage />
-          </BaseNavItem>
+          </base-nav-item>
         </RouterLink>
         <RouterLink to="/crmView">
-          <BaseNavItem
+          <base-nav-item
             text="CRM"
           >
             <IconComp />
-          </BaseNavItem>
+          </base-nav-item>
         </RouterLink>
       </ul>
     </nav>

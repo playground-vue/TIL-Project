@@ -1,25 +1,8 @@
 <script setup lang="ts">
 import { getUid } from '@/common/utils';
 import { useInput } from './uses';
+import type { Props, Emit } from './uses';
 
-export interface Props {
-  nativeType?: string;
-  modelValue: string | number;
-  label?: string;
-  autocomplete?: string;
-  disabled?: boolean;
-  placeholder?: string;
-  readonly?: boolean;
-  required?: boolean;
-  value?: string;
-}
-interface Emit {
-  (e: 'update:modelValue', value: Props['modelValue']): void;
-  (e: 'input', value: Props['modelValue']): void;
-  (e: 'focus', value: Event): void;
-  (e: 'blur', value: Event): void;
-  (e: 'change', value: Props['modelValue']): void;
-}
 const props = withDefaults(defineProps<Props>(), {
   nativeType: 'text',
   label: '',
@@ -49,7 +32,7 @@ const {
       class="base-input__label"
       :for="uuid"
     >
-      {{ label }}
+      {{ props.label }}
     </label>
     <input
       :id="uuid"

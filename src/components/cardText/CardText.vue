@@ -1,22 +1,16 @@
 <script setup lang="ts">
 import BaseCard from '@/components/baseCard/BaseCard.vue';
 import BaseTitle from '@/components/baseTitle/BaseTitle.vue';
-
-interface Props {
-  title?: string;
-  subtitle?: string;
-  style?: string;
-}
+import type { Props } from './uses';
 
 defineProps<Props>();
-
 </script>
 
 <template>
   <base-card class="card-text" :style="style">
     <base-title>
       {{ title }}
-      <template #subTitle>
+      <template #subtitle>
         {{ subtitle }}
       </template>
     </base-title>
