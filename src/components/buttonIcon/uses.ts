@@ -4,8 +4,8 @@ type ButtonNativeType = 'button' | 'reset' | 'submit';
 type ButtonType = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error';
 
 interface Props {
-  nativeType: ButtonNativeType;
-  type: ButtonType;
+  nativeType?: ButtonNativeType;
+  type?: ButtonType;
 }
 interface Emit {
   (e: 'click'): void;
