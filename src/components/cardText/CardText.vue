@@ -11,7 +11,7 @@ defineProps<Props>();
     <base-title>
       {{ title }}
       <template #subTitle>
-        {{ subTitle }}
+        {{ subtitle }}
       </template>
     </base-title>
     <slot />
