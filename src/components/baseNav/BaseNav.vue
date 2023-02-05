@@ -1,20 +1,18 @@
 <script setup lang="ts">
-import { numToPx } from '@/common/utils';
-import { computed } from 'vue';
 import BaseNavItem from '@/components/baseNavItem/BaseNavItem.vue';
-import IconChart from '@/assets/icon-chart.svg';
-import IconPage from '@/assets/icon-page.svg';
-import IconComp from '@/assets/icon-component.svg';
-
-interface Props {
-  navPadding: number;
-}
+import type { Props } from './uses';
+import { useBaseNav } from './uses';
 
 const props = withDefaults(defineProps<Props>(), {
   navPadding: 260,
 });
 
-const navPaddingPx = computed(() => numToPx(props.navPadding));
+const {
+  navList,
+  navPaddingPx,
+  isSameCurrentRoute,
+} = useBaseNav(props);
+
 </script>
 
 <template>
@@ -24,27 +22,19 @@ const navPaddingPx = computed(() => numToPx(props.navPadding));
         MENU
       </div>
       <ul class="nav-items">
-        <RouterLink to="/analyticsView">
-          <base-nav-item
-            text="Analytics"
-          >
-            <IconChart />
-          </base-nav-item>
-        </RouterLink>
-        <RouterLink to="/eCommerceView">
-          <base-nav-item
-            text="eCommerce"
-          >
-            <IconPage />
-          </base-nav-item>
-        </RouterLink>
-        <RouterLink to="/crmView">
-          <base-nav-item
-            text="CRM"
-          >
-            <IconComp />
-          </base-nav-item>
-        </RouterLink>
+        <template
+          v-for="info in navList"
+          :key="info.key"
+        >
+          <RouterLink :to="info.to">
+            <base-nav-item
+              :text="info.text"
+              :is-selected="isSameCurrentRoute(info.to)"
+            >
+              <component :is="info.icon" />
+            </base-nav-item>
+          </RouterLink>
+        </template>
       </ul>
     </nav>
   </aside>
