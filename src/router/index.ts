@@ -34,6 +34,11 @@ const router = createRouter({
           name: 'crmView',
           component: () => import('@/views/CrmView.vue'),
         },
+        {
+          path: '/todoView',
+          name: 'todoView',
+          component: () => import('@/views/TodoView.vue'),
+        },
       ],
     },
   ],
