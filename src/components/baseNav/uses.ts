@@ -3,6 +3,7 @@ import { numToPx } from '@/common/utils';
 import IconChart from '@/assets/icon-chart.svg';
 import IconPage from '@/assets/icon-page.svg';
 import IconComp from '@/assets/icon-component.svg';
+import IconTodo from '@/assets/icon-todo.svg';
 import router from '@/router';
 
 interface Props {
@@ -34,6 +35,12 @@ const useBaseNav = (props: Props) => {
       text: 'CRM',
       key: 'crm',
       icon: IconComp,
+    },
+    {
+      to: '/todoView',
+      text: 'To do',
+      key: 'todo',
+      icon: IconTodo,
     },
   ]);
 

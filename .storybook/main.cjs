@@ -1,3 +1,5 @@
+const VueTypeImports = require('vite-plugin-vue-type-imports')
+
 const path = require('path');
 const resolve = (dir) => path.join(__dirname, dir);
 
@@ -23,6 +25,7 @@ module.exports = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, '../src'),
     };
+    config.plugins.push(VueTypeImports['default']())
 
     return config;
   },

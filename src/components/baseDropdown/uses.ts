@@ -10,4 +10,4 @@ interface Emit {
   (e: 'click', value: SelectItem): void,
 }
 
-export type { SelectItem, Props, Emit };
+export type { Props, Emit };

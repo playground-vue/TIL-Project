@@ -1,5 +1,4 @@
 import type { Props } from '@/components/baseSelect/uses';
-import type { SelectItem } from '@/components/baseDropdown/uses';
 import { action } from '@storybook/addon-actions';
 import BaseSelect from './BaseSelect.vue';
 
@@ -27,9 +26,9 @@ const Template = (args: Props) => ({
 });
 
 export const DefaultSelect: any = Template.bind({});
-const modelValue: SelectItem = { name: 'Downloaded', value: 'downloaded' };
+const modelValue = { name: 'Downloaded', value: 'downloaded' };
 const placeholder = 'Select';
-const items: SelectItem[] = [
+const items = [
   { name: 'Downloaded', value: 'downloaded' },
   { name: 'Draft', value: 'draft' },
   { name: 'Paid', value: 'paid' },

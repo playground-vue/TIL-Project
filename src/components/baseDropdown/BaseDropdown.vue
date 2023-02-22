@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SelectItem, Props, Emit } from '@/components/baseDropdown/uses';
+import type { Props, Emit } from '@/components/baseDropdown/uses';
 
 const props = withDefaults(defineProps<Props>(), {
   selectItems: () => [],
@@ -7,7 +7,7 @@ const props = withDefaults(defineProps<Props>(), {
 });
 const emit = defineEmits<Emit>();
 
-const onClick = (selectItem: SelectItem) => {
+const onClick = (selectItem: Props['selectItems'][0]) => {
   emit('click', selectItem);
 };
 
