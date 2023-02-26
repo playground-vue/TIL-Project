@@ -1,12 +1,28 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import BaseCard from '@/components/baseCard/BaseCard.vue';
 import IconPlus from '@/assets/icon-plus.svg';
+import AddNotePopup from '@/components/AddNotePopup.vue';
+import type { Props as CardNoteProps } from '@/components/cardNote/uses';
 
-const emit = defineEmits<{(e: 'click'): void }>();
+const emit = defineEmits<{(e: 'add-note', value: CardNoteProps): void }>();
+
+const isShow = ref(false);
+const openPopup = () => {
+  isShow.value = true;
+};
+const closePopup = () => {
+  isShow.value = false;
+};
+
+const addNote = (newNote: CardNoteProps) => {
+  emit('add-note', newNote);
+  closePopup();
+};
 </script>
 
 <template>
-  <base-card class="add-box" @click="emit('click')">
+  <base-card class="add-box" @click="openPopup">
     <div class="icon">
       <icon-plus class="icon-plus" />
     </div>
@@ -14,6 +30,7 @@ const emit = defineEmits<{(e: 'click'): void }>();
       노트를 추가하세요!
     </p>
   </base-card>
+  <add-note-popup v-if="isShow" :is-show="isShow" @add-note="addNote" @click-close="closePopup" />
 </template>
 
 <style lang="scss" scoped>
